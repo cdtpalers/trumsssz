@@ -48,9 +48,9 @@ export const PLAYLIST: Song[] = [
     id: '1',
     title: "Estranghero",
     artist: "Cup of Joe",
-    coverUrl: "https://picsum.photos/id/30/300/300", // Placeholder image
-    audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // Example royalty-free MP3
-    note: "This was the song playing when we first danced. It always reminds me of how lucky I am to hold you.",
+    coverUrl: "https://cdn-images.dzcdn.net/images/cover/2a6fa96a0485ec0bf27c91bfaa2a5045/0x1900-000000-80-0-0.jpg", // Placeholder image
+    audioUrl: "https://audio.jukehost.co.uk/8Q4KCNIsMBlSPEJ0dLZEPAnzVjqyvMEv", // Example royalty-free MP3
+    note: "yung song mo for me🤗",
   },
   {
     id: '2',
@@ -58,7 +58,7 @@ export const PLAYLIST: Song[] = [
     artist: "Nico Play",
     coverUrl: "https://i.scdn.co/image/ab67616d0000b273210e76ff9d2cf25b1ce3f611",
     audioUrl: "https://audio.jukehost.co.uk/DFLVwFqB7FTaRKo0NZNAH1hS82YJGQc8",
-    note: "Because you truly are amazing, just the way you are. Never change.",
+    note: "You don't know How I long for you, How it keeps me awake, You don't know All that I would do, The vows I would make, Married life, A family, and a wife",
   },
   {
     id: '3',
