@@ -45,7 +45,7 @@ const App: React.FC = () => {
               <span className="text-teal-600">{PARTNER_NAME}</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 font-light mb-12">
-              I made this little space just for us, to remind you how much you mean to me.
+              I made this little space just for us, para ma-remind ka how much you mean to me.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -116,7 +116,7 @@ const App: React.FC = () => {
 
         {/* Footer */}
         <footer className="text-center text-teal-300 text-sm mt-12 pb-4">
-          Made with ❤️ for {PARTNER_NAME}
+          Made with ❤️ for shekyna palero
         </footer>
       </main>
     </div>
