@@ -46,13 +46,30 @@ export const LOVE_NOTES: LoveNote[] = [
     content: "im sorry if naaaway kita, that just means nagtatampo akoo and i want lambing hehehe",
     color: 'bg-teal-100',
   },
+  {
+    id: '8',
+    content: "i want hugsss na so tightt babyy",
+    color: 'bg-teal-100',
+  },
+  {
+    id: '9',
+    content: "its ur eyes that i want to see when i wake up love, ginaya ko lng from u🥰",
+    color: 'bg-sky-50',
+  },
+  {
+    id: '10',
+    content: "sana di ka magsawa at ma-bored sken hanggang pagtanda😙",
+    color: 'bg-sky-50',
+  },
+  {
+    id: '11',
+    content: "You're best thing that ever happened to meeeee poo😘",
+    color: 'bg-sky-50',
+  },
 ];
 
 // 🎵 OUR PLAYLIST 🎵
-// Add songs that mean something to you.
-// For 'audioUrl', you can use direct links to MP3 files. 
-// If you don't have direct MP3 links, the player will just simulate playing for the UI demo.
-// For 'coverUrl', use https://picsum.photos/300/300 or specific image links.
+
 export const PLAYLIST: Song[] = [
   {
     id: '1',
@@ -77,5 +94,13 @@ export const PLAYLIST: Song[] = [
     coverUrl: "https://scontent.fmnl14-1.fna.fbcdn.net/v/t39.30808-6/495349435_4122846914703048_1886679763937689094_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH-CdZzzz58ZMKN_g1ZaApPWIRhdg48XVxYhGF2DjxdXPfDVE1U7Wlmzz7xlxZfRSOLlheD4Kv-B5WvEV1KalwT&_nc_ohc=RTaXL0EPwlcQ7kNvwEfdMLF&_nc_oc=AdnAtWWgHKOFo-WmA5--slY6DDUnuRXfG2T1MpH18_E8BAweqHFUdp1Yo2lq3dxs0Kw&_nc_zt=23&_nc_ht=scontent.fmnl14-1.fna&_nc_gid=sbfefZAuUtgEvXjQZRjDHA&oh=00_AfuQa2zJjrbkgaWVvJQzPT_-0VkZw6P9ynbR-_SaXXCAFA&oe=699518BC",
     audioUrl: "https://audio.jukehost.co.uk/rQRrU4tqsPg7mkin4IeCYL6W2BNhAyBC",
     note: "Aalagaan ka't di papabayaan,Pagkat ikaw sa'kin ay prinsesa🥰",
+  },
+  {
+    id: '4',
+    title: "Best Part",
+    artist: "Daniel Caesar",
+    coverUrl: "https://scontent.fmnl14-1.fna.fbcdn.net/v/t39.30808-6/633432471_25719365951019606_252698183004588_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHkp9Nv3N-xInyhAkSTkvDoZQWk0gYNQYxlBaTSBg1BjAAMs-KXy41klXlG-skLp-3twB74GTQXSYlB4iLYWKyM&_nc_ohc=T0aIX8Dz5mAQ7kNvwGP4Fvf&_nc_oc=Admh0JXsTOKNDmKFxQZ5cb8LLEqlfH9b6OaezNBdAGpxycdhTZw-r3D_pvd2ftdADSo&_nc_zt=23&_nc_ht=scontent.fmnl14-1.fna&_nc_gid=g_g5yDb5kjF5a8IIp4um3g&oh=00_AfuQACIK4XKa40E5BN3ZmNr5ew_V947_6ttNQTt5L6ajAQ&oe=699512AC",
+    audioUrl: "https://audio.jukehost.co.uk/oxaRFLeCZmKrHEZW95pgRy5oWEHKWWfS",
+    note: "You don't know, babe, When you hold me, And kiss me slowly☺️,It's the sweetest thing",
   },
 ];
