@@ -72,7 +72,16 @@ const LoveJar: React.FC = () => {
     } catch (error) {
       console.error('Failed to send email:', error);
       setIsSending(false);
-      alert("Failed to send note. Please try again.");
+
+      let errorMessage = "Failed to send note. Please try again.";
+      if (error instanceof Error) {
+        errorMessage = `Error: ${error.message}`;
+      } else if (typeof error === 'object' && error !== null && 'text' in error) {
+        // EmailJS often returns an object like { status: 400, text: "..." }
+        errorMessage = `Error: ${(error as any).text}`;
+      }
+
+      alert(errorMessage);
     }
   };
 
