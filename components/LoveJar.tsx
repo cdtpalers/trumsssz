@@ -53,7 +53,7 @@ const LoveJar: React.FC = () => {
 
     try {
       const serviceId = 'service_pjyt3at';
-      const templateId = 'template_3qjh8uc';
+      const templateId = 'template_nvmlggf';
       const publicKey = 'vZSk4w2_GHmr60P6J';
 
       const templateParams = {
