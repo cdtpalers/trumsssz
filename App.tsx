@@ -38,18 +38,18 @@ const App: React.FC = () => {
         return (
           <div className="text-center animate-fadeIn max-w-2xl px-6">
             <div className="mb-6 flex justify-center">
-               <Heart className="w-20 h-20 text-teal-500 fill-teal-500 animate-pulse" />
+              <Heart className="w-20 h-20 text-teal-500 fill-teal-500 animate-pulse" />
             </div>
             <h1 className="text-5xl md:text-7xl font-serif text-blue-900 mb-6 leading-tight">
-              Happy Valentine's Day,<br />
+              Happy Heart's Day,<br />
               <span className="text-teal-600">{PARTNER_NAME}</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 font-light mb-12">
               I made this little space just for us, to remind you how much you mean to me.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button 
+              <button
                 onClick={() => setCurrentView(View.NOTES)}
                 className="group relative px-8 py-4 bg-white text-teal-600 font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-2 border-blue-100 overflow-hidden"
               >
@@ -59,7 +59,7 @@ const App: React.FC = () => {
                 </span>
               </button>
 
-              <button 
+              <button
                 onClick={() => setCurrentView(View.PLAYLIST)}
                 className="group relative px-8 py-4 bg-teal-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
@@ -76,31 +76,31 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-white text-gray-800 font-sans selection:bg-teal-200 overflow-x-hidden">
-      
+
       {/* Background Ambience */}
       <FloatingHearts />
-      
+
       {/* Main Container */}
       <main className="relative z-10 container mx-auto px-4 py-8 min-h-screen flex flex-col">
-        
+
         {/* Navigation (Only show if not on landing) */}
         {currentView !== View.LANDING && (
           <nav className="flex justify-center gap-4 mb-8">
-            <button 
+            <button
               onClick={() => setCurrentView(View.LANDING)}
               className="text-blue-400 hover:text-teal-600 transition-colors"
             >
               Home
             </button>
             <span className="text-blue-200">|</span>
-            <button 
+            <button
               onClick={() => setCurrentView(View.NOTES)}
               className={`transition-colors ${currentView === View.NOTES ? 'text-teal-700 font-bold' : 'text-blue-400 hover:text-teal-600'}`}
             >
               Notes
             </button>
-             <span className="text-blue-200">|</span>
-            <button 
+            <span className="text-blue-200">|</span>
+            <button
               onClick={() => setCurrentView(View.PLAYLIST)}
               className={`transition-colors ${currentView === View.PLAYLIST ? 'text-teal-700 font-bold' : 'text-blue-400 hover:text-teal-600'}`}
             >

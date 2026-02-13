@@ -5,7 +5,7 @@ import { LoveNote, Song } from './types';
 // Edit the values below to personalize your Valentine's website!
 // ==================================================================================
 
-export const PARTNER_NAME = "My Love"; // Change this to your partner's name
+export const PARTNER_NAME = "WABI KO"; // Change this to your partner's name
 
 // 💌 LOVE NOTES 💌
 // Add as many notes as you want. These will appear in the "Love Jar" feature.
@@ -13,7 +13,7 @@ export const PARTNER_NAME = "My Love"; // Change this to your partner's name
 export const LOVE_NOTES: LoveNote[] = [
   {
     id: '1',
-    content: "I love the way your eyes sparkle when you laugh. It makes my whole day brighter.",
+    content: "Your eyes literally makes me melt wabiii🫣",
     color: 'bg-blue-100',
   },
   {
@@ -46,18 +46,18 @@ export const LOVE_NOTES: LoveNote[] = [
 export const PLAYLIST: Song[] = [
   {
     id: '1',
-    title: "Perfect",
-    artist: "Ed Sheeran",
+    title: "Estranghero",
+    artist: "Cup of Joe",
     coverUrl: "https://picsum.photos/id/30/300/300", // Placeholder image
     audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // Example royalty-free MP3
     note: "This was the song playing when we first danced. It always reminds me of how lucky I am to hold you.",
   },
   {
     id: '2',
-    title: "Just the Way You Are",
-    artist: "Bruno Mars",
-    coverUrl: "https://picsum.photos/id/40/300/300",
-    audioUrl: "", // Empty URL will just simulate playback visually
+    title: "You Don't Know",
+    artist: "Nico Play",
+    coverUrl: "https://i.scdn.co/image/ab67616d0000b273210e76ff9d2cf25b1ce3f611",
+    audioUrl: "https://voca.ro/1dY1KvkGMcOP",
     note: "Because you truly are amazing, just the way you are. Never change.",
   },
   {
@@ -65,7 +65,7 @@ export const PLAYLIST: Song[] = [
     title: "All of Me",
     artist: "John Legend",
     coverUrl: "https://picsum.photos/id/65/300/300",
-    audioUrl: "", 
+    audioUrl: "",
     note: "I give you all of me, and I know you give me all of you. That trust is everything to me.",
   },
 ];
