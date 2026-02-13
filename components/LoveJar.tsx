@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { LOVE_NOTES } from '../constants';
 import { X, Sparkles, RefreshCcw } from 'lucide-react';
 
+import emailjs from '@emailjs/browser';
+
 const LoveJar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentNoteIndex, setCurrentNoteIndex] = useState(0);
@@ -44,21 +46,34 @@ const LoveJar: React.FC = () => {
     }, 500);
   };
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!message.trim()) return;
 
     setIsSending(true);
 
-    // Simulate network delay
-    setTimeout(() => {
+    try {
+      const serviceId = 'service_pjyt3at';
+      const templateId = 'template_3qjh8uc';
+      const publicKey = 'vZSk4w2_GHmr60P6J';
+
+      const templateParams = {
+        message: message,
+        to_name: 'Partner',
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
       setIsSending(false);
       setIsWriteOpen(false);
       setMessage('');
       setShowSuccess(true);
-
-      // Auto-hide success message after 3 seconds
       setTimeout(() => setShowSuccess(false), 3000);
-    }, 1500);
+
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setIsSending(false);
+      alert("Failed to send note. Please try again.");
+    }
   };
 
   const note = LOVE_NOTES[currentNoteIndex];
