@@ -57,7 +57,7 @@ export const PLAYLIST: Song[] = [
     title: "You Don't Know",
     artist: "Nico Play",
     coverUrl: "https://i.scdn.co/image/ab67616d0000b273210e76ff9d2cf25b1ce3f611",
-    audioUrl: "https://voca.ro/1dY1KvkGMcOP",
+    audioUrl: "https://audio.jukehost.co.uk/DFLVwFqB7FTaRKo0NZNAH1hS82YJGQc8",
     note: "Because you truly are amazing, just the way you are. Never change.",
   },
   {
