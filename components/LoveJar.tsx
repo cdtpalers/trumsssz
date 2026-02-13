@@ -8,6 +8,11 @@ const LoveJar: React.FC = () => {
   const [currentNoteIndex, setCurrentNoteIndex] = useState(0);
   const [shaking, setShaking] = useState(false);
 
+  const [isWriteOpen, setIsWriteOpen] = useState(false);
+  const [message, setMessage] = useState('');
+  const [isSending, setIsSending] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
   // Generate random positions for the "folded notes" inside the jar
   const [foldedNotes] = useState(() =>
     Array.from({ length: 12 }).map((_, i) => ({
@@ -37,6 +42,23 @@ const LoveJar: React.FC = () => {
       // Pick next note for next time
       setCurrentNoteIndex((prev) => (prev + 1) % LOVE_NOTES.length);
     }, 500);
+  };
+
+  const handleSend = () => {
+    if (!message.trim()) return;
+
+    setIsSending(true);
+
+    // Simulate network delay
+    setTimeout(() => {
+      setIsSending(false);
+      setIsWriteOpen(false);
+      setMessage('');
+      setShowSuccess(true);
+
+      // Auto-hide success message after 3 seconds
+      setTimeout(() => setShowSuccess(false), 3000);
+    }, 1500);
   };
 
   const note = LOVE_NOTES[currentNoteIndex];
@@ -164,8 +186,85 @@ const LoveJar: React.FC = () => {
               </div>
             </motion.div>
           )}
+
+          {/* WRITE NOTE MODAL */}
+          {isWriteOpen && (
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="absolute z-50 inset-0 flex items-center justify-center p-4 bg-black/20 backdrop-blur-sm rounded-3xl"
+              onClick={() => setIsWriteOpen(false)}
+            >
+              <div
+                className="bg-white w-full max-w-sm p-6 rounded-2xl shadow-2xl border border-teal-100"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <h3 className="text-xl font-bold text-teal-800 mb-4 flex items-center gap-2">
+                  <Sparkles size={18} /> Write a Note
+                </h3>
+                <textarea
+                  className="w-full h-32 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none mb-4 text-gray-700 bg-gray-50"
+                  placeholder="Type your message here..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+                <div className="flex justify-end gap-3">
+                  <button
+                    onClick={() => setIsWriteOpen(false)}
+                    className="px-4 py-2 text-gray-500 hover:text-gray-700"
+                    disabled={isSending}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={handleSend}
+                    disabled={!message.trim() || isSending}
+                    className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                  >
+                    {isSending ? (
+                      <RefreshCcw size={16} className="animate-spin" />
+                    ) : (
+                      "Send"
+                    )}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
+          {/* SUCCESS POPUP */}
+          {showSuccess && (
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+              className="absolute z-[60] bottom-10 bg-emerald-50 text-emerald-800 px-6 py-4 rounded-xl shadow-lg border border-emerald-200 flex items-center gap-3"
+            >
+              <div className="bg-emerald-100 p-2 rounded-full">
+                <Sparkles size={16} className="text-emerald-600" />
+              </div>
+              <div>
+                <p className="font-bold text-sm">Sent Successfully!</p>
+                <p className="text-xs opacity-80">The note was sent to the website creator.</p>
+              </div>
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
+
+      {/* BUTTON TO OPEN WRITE MODAL */}
+      {!isOpen && !isWriteOpen && (
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          onClick={() => setIsWriteOpen(true)}
+          className="mt-8 px-6 py-2 bg-white/80 backdrop-blur-sm border border-white/50 text-teal-700 rounded-full shadow-lg hover:bg-white hover:scale-105 transition-all text-sm font-semibold flex items-center gap-2 group"
+        >
+          <Sparkles size={16} className="group-hover:rotate-12 transition-transform" />
+          Write a Note
+        </motion.button>
+      )}
 
       {/* Decorative Floor Shadow */}
       <div className="w-48 h-4 bg-black/10 rounded-[100%] blur-md -mt-4 z-0" />
