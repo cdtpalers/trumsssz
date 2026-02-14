@@ -42,7 +42,7 @@ const App: React.FC = () => {
             </div>
             <h1 className="text-5xl md:text-7xl font-serif text-blue-900 mb-6 leading-tight">
               Happy Heart's Day,<br />
-              <span className="text-teal-600">{PARTNER_NAME}</span>
+              <span className="text-teal-600">Love</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 font-light mb-12">
               I made this little space just for us, para ma-remind ka how much you mean to me.
