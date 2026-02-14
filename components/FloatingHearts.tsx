@@ -10,7 +10,7 @@ const FloatingHearts: React.FC = () => {
       {hearts.map((_, i) => (
         <motion.div
           key={i}
-          className="absolute text-cyan-200 opacity-30"
+          className="absolute text-blue-200 opacity-30"
           initial={{
             y: "100vh",
             x: Math.random() * window.innerWidth,

@@ -5,7 +5,7 @@ import { LoveNote, Song } from './types';
 // Edit the values below to personalize your Valentine's website!
 // ==================================================================================
 
-export const PARTNER_NAME = "WABI KO"; // Change this to your partner's name
+export const PARTNER_NAME = "Sophia"; // Change this to your partner's name
 
 // 💌 LOVE NOTES 💌
 // Add as many notes as you want. These will appear in the "Love Jar" feature.
@@ -19,12 +19,12 @@ export const LOVE_NOTES: LoveNote[] = [
   {
     id: '2',
     content: "ingat ka sa LDC huhuh, I will miss u somuchyyyy",
-    color: 'bg-teal-100',
+    color: 'bg-indigo-100',
   },
   {
     id: '3',
     content: "You are my best friend, my greatest support, and the love of my life.",
-    color: 'bg-cyan-50',
+    color: 'bg-blue-50',
   },
   {
     id: '4',
@@ -34,7 +34,7 @@ export const LOVE_NOTES: LoveNote[] = [
   {
     id: '5',
     content: "I can't wait to live with you soon when we get married. We stay grounded lang sa ating faith kay GOD wabi.",
-    color: 'bg-emerald-50',
+    color: 'bg-indigo-50',
   },
   {
     id: '6',
@@ -44,12 +44,12 @@ export const LOVE_NOTES: LoveNote[] = [
   {
     id: '7',
     content: "im sorry if naaaway kita, that just means nagtatampo akoo and i want lambing hehehe",
-    color: 'bg-teal-100',
+    color: 'bg-indigo-100',
   },
   {
     id: '8',
     content: "i want hugsss na so tightt babyy",
-    color: 'bg-teal-100',
+    color: 'bg-indigo-100',
   },
   {
     id: '9',

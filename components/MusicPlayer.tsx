@@ -10,7 +10,7 @@ const MusicPlayer: React.FC = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  
+
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -58,13 +58,13 @@ const MusicPlayer: React.FC = () => {
     const file = event.target.files?.[0];
     if (file) {
       const objectUrl = URL.createObjectURL(file);
-      
+
       const newPlaylist = [...playlist];
       newPlaylist[currentSongIndex] = {
         ...newPlaylist[currentSongIndex],
         audioUrl: objectUrl
       };
-      
+
       setPlaylist(newPlaylist);
       setIsPlaying(true);
     }
@@ -90,15 +90,15 @@ const MusicPlayer: React.FC = () => {
 
   return (
     <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-      
+
       {/* Left Side: Player UI */}
       <div className="bg-white/80 backdrop-blur-md rounded-3xl p-6 shadow-2xl border border-white/50 relative overflow-hidden">
         {/* Background ambience */}
-        <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-br from-blue-200 via-green-100 to-transparent opacity-50 blur-3xl pointer-events-none" />
+        <div className="absolute top-[-50%] left-[-50%] w-[200%] h-[200%] bg-gradient-to-br from-blue-200 via-indigo-100 to-transparent opacity-50 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col items-center">
           {/* Album Art */}
-          <motion.div 
+          <motion.div
             key={currentSong.id}
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -106,19 +106,19 @@ const MusicPlayer: React.FC = () => {
             className="w-64 h-64 rounded-2xl shadow-lg overflow-hidden mb-6 relative group"
           >
             {currentSong.coverUrl ? (
-              <img 
-                src={currentSong.coverUrl} 
-                alt={currentSong.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+              <img
+                src={currentSong.coverUrl}
+                alt={currentSong.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
             ) : (
               <div className="w-full h-full bg-gray-200 flex items-center justify-center">
                 <Music size={48} className="text-gray-400" />
               </div>
             )}
-            
+
             {/* Spinning Disc Effect Overlay */}
-            <motion.div 
+            <motion.div
               animate={{ rotate: isPlaying ? 360 : 0 }}
               transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
               className="absolute bottom-2 right-2 opacity-80"
@@ -130,61 +130,61 @@ const MusicPlayer: React.FC = () => {
           {/* Song Info */}
           <div className="text-center mb-6 w-full relative">
             <h3 className="text-2xl font-bold text-gray-800 truncate px-4">{currentSong.title}</h3>
-            <p className="text-teal-600 font-medium">{currentSong.artist}</p>
-            
+            <p className="text-blue-600 font-medium">{currentSong.artist}</p>
+
             {/* Upload Button */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2">
-                <input 
-                    type="file" 
-                    ref={fileInputRef}
-                    onChange={handleFileUpload}
-                    accept="audio/*,.flac"
-                    className="hidden"
-                />
-                <button 
-                    onClick={() => fileInputRef.current?.click()}
-                    className="p-2 text-gray-400 hover:text-teal-600 transition-colors bg-white/50 rounded-full hover:bg-white"
-                    title="Upload local FLAC/audio file for this song"
-                >
-                    <Upload size={18} />
-                </button>
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleFileUpload}
+                accept="audio/*,.flac"
+                className="hidden"
+              />
+              <button
+                onClick={() => fileInputRef.current?.click()}
+                className="p-2 text-gray-400 hover:text-blue-600 transition-colors bg-white/50 rounded-full hover:bg-white"
+                title="Upload local FLAC/audio file for this song"
+              >
+                <Upload size={18} />
+              </button>
             </div>
           </div>
 
           {/* Progress Bar */}
           <div className="w-full bg-gray-200 h-1.5 rounded-full mb-8 overflow-hidden">
-            <div 
-              className="h-full bg-teal-500 rounded-full transition-all duration-300 ease-linear"
+            <div
+              className="h-full bg-blue-500 rounded-full transition-all duration-300 ease-linear"
               style={{ width: `${progress}%` }}
             />
           </div>
 
           {/* Controls */}
           <div className="flex items-center gap-8">
-            <button 
+            <button
               onClick={prevSong}
-              className="p-3 text-gray-500 hover:text-teal-600 transition-colors"
+              className="p-3 text-gray-500 hover:text-blue-600 transition-colors"
             >
               <SkipBack size={28} />
             </button>
-            
-            <button 
+
+            <button
               onClick={togglePlay}
-              className="w-16 h-16 bg-teal-500 hover:bg-teal-600 rounded-full text-white flex items-center justify-center shadow-lg shadow-teal-200 transition-transform hover:scale-105 active:scale-95"
+              className="w-16 h-16 bg-blue-500 hover:bg-blue-600 rounded-full text-white flex items-center justify-center shadow-lg shadow-blue-200 transition-transform hover:scale-105 active:scale-95"
             >
               {isPlaying ? <Pause size={32} fill="currentColor" /> : <Play size={32} fill="currentColor" className="ml-1" />}
             </button>
 
-            <button 
+            <button
               onClick={nextSong}
-              className="p-3 text-gray-500 hover:text-teal-600 transition-colors"
+              className="p-3 text-gray-500 hover:text-blue-600 transition-colors"
             >
               <SkipForward size={28} />
             </button>
           </div>
 
           {/* Hidden Audio Element */}
-          <audio 
+          <audio
             ref={audioRef}
             src={currentSong.audioUrl}
             onTimeUpdate={handleTimeUpdate}
@@ -202,18 +202,18 @@ const MusicPlayer: React.FC = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -50, opacity: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-teal-400 w-full"
+            className="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-blue-400 w-full"
           >
-            <h4 className="text-teal-500 uppercase tracking-widest text-xs font-bold mb-3">
+            <h4 className="text-blue-500 uppercase tracking-widest text-xs font-bold mb-3">
               Why this song?
             </h4>
             <p className="text-gray-700 font-serif text-xl leading-relaxed italic">
               "{currentSong.note}"
             </p>
             <div className="mt-6 flex gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-300" />
-              <span className="w-2 h-2 rounded-full bg-teal-300" />
-              <span className="w-2 h-2 rounded-full bg-teal-300" />
+              <span className="w-2 h-2 rounded-full bg-blue-300" />
+              <span className="w-2 h-2 rounded-full bg-blue-300" />
+              <span className="w-2 h-2 rounded-full bg-blue-300" />
             </div>
           </motion.div>
         </AnimatePresence>

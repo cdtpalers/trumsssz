@@ -19,7 +19,7 @@ const App: React.FC = () => {
       case View.NOTES:
         return (
           <div className="w-full animate-fadeIn">
-            <h2 className="text-3xl md:text-4xl font-serif text-teal-800 text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-serif text-blue-800 text-center mb-10">
               Notes from the Heart
             </h2>
             <LoveJar />
@@ -28,7 +28,7 @@ const App: React.FC = () => {
       case View.PLAYLIST:
         return (
           <div className="w-full animate-fadeIn">
-            <h2 className="text-3xl md:text-4xl font-serif text-teal-800 text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-serif text-blue-800 text-center mb-10">
               Our Love Soundtrack
             </h2>
             <MusicPlayer />
@@ -38,11 +38,11 @@ const App: React.FC = () => {
         return (
           <div className="text-center animate-fadeIn max-w-2xl px-6">
             <div className="mb-6 flex justify-center">
-              <Heart className="w-20 h-20 text-teal-500 fill-teal-500 animate-pulse" />
+              <Heart className="w-20 h-20 text-blue-500 fill-blue-500 animate-pulse" />
             </div>
             <h1 className="text-5xl md:text-7xl font-serif text-blue-900 mb-6 leading-tight">
               Happy Heart's Day,<br />
-              <span className="text-teal-600">Love</span>
+              <span className="text-blue-600">Love</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 font-light mb-12">
               I made this little space just for us, para ma-remind ka how much you mean to me.
@@ -51,9 +51,9 @@ const App: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <button
                 onClick={() => setCurrentView(View.NOTES)}
-                className="group relative px-8 py-4 bg-white text-teal-600 font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-2 border-blue-100 overflow-hidden"
+                className="group relative px-8 py-4 bg-white text-blue-600 font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border-2 border-blue-100 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-teal-50 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative z-10 flex items-center gap-3">
                   <Mail className="w-6 h-6" /> Open Love Jar
                 </span>
@@ -61,9 +61,9 @@ const App: React.FC = () => {
 
               <button
                 onClick={() => setCurrentView(View.PLAYLIST)}
-                className="group relative px-8 py-4 bg-teal-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                className="group relative px-8 py-4 bg-blue-600 text-white font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-teal-700 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-blue-700 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <span className="relative z-10 flex items-center gap-3">
                   <Music className="w-6 h-6" /> Play Our Songs
                 </span>
@@ -75,7 +75,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-white text-gray-800 font-sans selection:bg-teal-200 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-white text-gray-800 font-sans selection:bg-blue-200 overflow-x-hidden">
 
       {/* Background Ambience */}
       <FloatingHearts />
@@ -88,21 +88,21 @@ const App: React.FC = () => {
           <nav className="flex justify-center gap-4 mb-8">
             <button
               onClick={() => setCurrentView(View.LANDING)}
-              className="text-blue-400 hover:text-teal-600 transition-colors"
+              className="text-blue-400 hover:text-blue-600 transition-colors"
             >
               Home
             </button>
             <span className="text-blue-200">|</span>
             <button
               onClick={() => setCurrentView(View.NOTES)}
-              className={`transition-colors ${currentView === View.NOTES ? 'text-teal-700 font-bold' : 'text-blue-400 hover:text-teal-600'}`}
+              className={`transition-colors ${currentView === View.NOTES ? 'text-blue-700 font-bold' : 'text-blue-400 hover:text-blue-600'}`}
             >
               Notes
             </button>
             <span className="text-blue-200">|</span>
             <button
               onClick={() => setCurrentView(View.PLAYLIST)}
-              className={`transition-colors ${currentView === View.PLAYLIST ? 'text-teal-700 font-bold' : 'text-blue-400 hover:text-teal-600'}`}
+              className={`transition-colors ${currentView === View.PLAYLIST ? 'text-blue-700 font-bold' : 'text-blue-400 hover:text-blue-600'}`}
             >
               Playlist
             </button>
@@ -115,8 +115,8 @@ const App: React.FC = () => {
         </div>
 
         {/* Footer */}
-        <footer className="text-center text-teal-300 text-sm mt-12 pb-4">
-          Made with ❤️ for shekyna palero
+        <footer className="text-center text-blue-300 text-sm mt-12 pb-4">
+          Made with ❤️ for sophia
         </footer>
       </main>
     </div>

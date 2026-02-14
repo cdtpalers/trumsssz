@@ -96,7 +96,7 @@ const LoveJar: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         className="mb-12 text-center"
       >
-        <p className="text-teal-800 font-serif italic text-xl">
+        <p className="text-blue-800 font-serif italic text-xl">
           {isOpen ? "A message from my heart..." : "Tap the jar to receive a message"}
         </p>
       </motion.div>
@@ -119,7 +119,7 @@ const LoveJar: React.FC = () => {
           <div className="w-28 h-8 bg-blue-100/30 mx-auto border-x-2 border-blue-200 backdrop-blur-sm z-10" />
 
           {/* Jar Body */}
-          <div className="w-48 h-64 bg-gradient-to-br from-blue-100/40 to-teal-100/40 backdrop-blur-md rounded-b-[3rem] rounded-t-lg border-2 border-blue-200 shadow-xl relative overflow-hidden">
+          <div className="w-48 h-64 bg-gradient-to-br from-blue-100/40 to-indigo-100/40 backdrop-blur-md rounded-b-[3rem] rounded-t-lg border-2 border-blue-200 shadow-xl relative overflow-hidden">
 
             {/* Glass Shine */}
             <div className="absolute top-4 left-4 w-4 h-56 bg-gradient-to-b from-white/60 to-transparent rounded-full blur-[1px]" />
@@ -175,7 +175,7 @@ const LoveJar: React.FC = () => {
                 <X size={20} />
               </button>
 
-              <div className="mb-4 text-teal-500/50">
+              <div className="mb-4 text-blue-500/50">
                 <Sparkles size={24} />
               </div>
 
@@ -186,7 +186,7 @@ const LoveJar: React.FC = () => {
               <div className="flex gap-3">
                 <button
                   onClick={(e) => { e.stopPropagation(); closeNote(); }}
-                  className="text-xs font-bold uppercase tracking-widest text-teal-600 hover:text-teal-800"
+                  className="text-xs font-bold uppercase tracking-widest text-blue-600 hover:text-blue-800"
                 >
                   Put back
                 </button>
@@ -203,7 +203,7 @@ const LoveJar: React.FC = () => {
                       setTimeout(() => setIsOpen(true), 200);
                     }, 400);
                   }}
-                  className="text-xs font-bold uppercase tracking-widest text-teal-600 hover:text-teal-800 flex items-center gap-1"
+                  className="text-xs font-bold uppercase tracking-widest text-blue-600 hover:text-blue-800 flex items-center gap-1"
                 >
                   <RefreshCcw size={12} /> New Note
                 </button>
@@ -221,14 +221,14 @@ const LoveJar: React.FC = () => {
               onClick={() => setIsWriteOpen(false)}
             >
               <div
-                className="bg-white w-full max-w-sm p-6 rounded-2xl shadow-2xl border border-teal-100"
+                className="bg-white w-full max-w-sm p-6 rounded-2xl shadow-2xl border border-blue-100"
                 onClick={(e) => e.stopPropagation()}
               >
-                <h3 className="text-xl font-bold text-teal-800 mb-4 flex items-center gap-2">
+                <h3 className="text-xl font-bold text-blue-800 mb-4 flex items-center gap-2">
                   <Sparkles size={18} /> Write a Note
                 </h3>
                 <textarea
-                  className="w-full h-32 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none mb-4 text-gray-700 bg-gray-50"
+                  className="w-full h-32 p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none mb-4 text-gray-700 bg-gray-50"
                   placeholder="Type your message here..."
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -244,7 +244,7 @@ const LoveJar: React.FC = () => {
                   <button
                     onClick={handleSend}
                     disabled={!message.trim() || isSending}
-                    className="px-6 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                   >
                     {isSending ? (
                       <RefreshCcw size={16} className="animate-spin" />
@@ -263,10 +263,10 @@ const LoveJar: React.FC = () => {
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 50, opacity: 0 }}
-              className="absolute z-[60] bottom-10 bg-emerald-50 text-emerald-800 px-6 py-4 rounded-xl shadow-lg border border-emerald-200 flex items-center gap-3"
+              className="absolute z-[60] bottom-10 bg-blue-50 text-blue-800 px-6 py-4 rounded-xl shadow-lg border border-blue-200 flex items-center gap-3"
             >
-              <div className="bg-emerald-100 p-2 rounded-full">
-                <Sparkles size={16} className="text-emerald-600" />
+              <div className="bg-blue-100 p-2 rounded-full">
+                <Sparkles size={16} className="text-blue-600" />
               </div>
               <div>
                 <p className="font-bold text-sm">Sent Successfully!</p>
@@ -283,7 +283,7 @@ const LoveJar: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           onClick={() => setIsWriteOpen(true)}
-          className="mt-8 px-6 py-2 bg-white/80 backdrop-blur-sm border border-white/50 text-teal-700 rounded-full shadow-lg hover:bg-white hover:scale-105 transition-all text-sm font-semibold flex items-center gap-2 group"
+          className="mt-8 px-6 py-2 bg-white/80 backdrop-blur-sm border border-white/50 text-blue-700 rounded-full shadow-lg hover:bg-white hover:scale-105 transition-all text-sm font-semibold flex items-center gap-2 group"
         >
           <Sparkles size={16} className="group-hover:rotate-12 transition-transform" />
           Write a Note
